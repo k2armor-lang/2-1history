@@ -6,61 +6,99 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="한국사2 연표">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#15171b" media="(prefers-color-scheme: dark)">
+<meta name="author" content="이수훈 (고운고등학교 교사)">
+<meta name="copyright" content="© 2026 고운고등학교 교사 이수훈. All rights reserved.">
+<meta name="description" content="한국사 2 · 2학기 중간고사 연표 정리 학습 덱 — 1910~1949, 주제 01~14">
 <title>한국사2 · 2학기 중간고사 연표 정리</title>
 <!--
   학생 배부용 태블릿 학습 덱 (아이패드 가로모드 기준)
+
+  ─ 저작권 ────────────────────────────────────────────────
+  © 2026 고운고등학교 교사 이수훈 (Lee Soohoon, Goun High School)
+  이 자료의 구성 · 편집 · 디자인에 대한 저작권은 제작자에게 있습니다.
+  교육 목적의 수업 활용은 자유롭게 하실 수 있으나, 무단 배포 ·
+  상업적 이용 · 제작자 표기 삭제는 삼가 주세요.
+
   ─ 짝 파일 ────────────────────────────────────────────────
   · 한국사2_2학기_중간고사_연표정리.html                  … A4 인쇄·배부용 (같은 내용)
   · 한국사2_2학기_중간고사_연표정리_정답지(교사용).html   … 빈칸 22문항 정답
   내용을 고칠 때는 위 파일도 함께 고쳐야 합니다.
+
+  ─ 기능 ──────────────────────────────────────────────────
+  · 좌우 스와이프 20쪽 · 목차 · 글씨 크기 · 라이트/다크
+  · 19~20쪽 연도 빈칸: 터치 입력 + 자동 채점 (localStorage 보존)
+  · 인쇄 · PDF 저장 (지금 쪽만 / 전체 20쪽 / A4 배부용 열기)
 -->
 <style>
 /* ══════════════ 테마 변수 (인쇄본과 동일 체계) ══════════════ */
 *{box-sizing:border-box}
 :root{
-  --bg:#ffffff; --fg:#1b1d21; --muted:#6b7280; --line:#d8dce3; --soft:#f5f6f8;
-  --chrome:#f7f8fa;
-  --gov:#b8362d; --gov-bg:#fdeceb; --gov-bd:#f0b7b2;
-  --dom:#1c56bd; --dom-bg:#eaf1fd; --dom-bd:#b3cbf3;
-  --for:#0f6f4c; --for-bg:#e7f5ef; --for-bd:#a9ddc7;
-  --cul:#6f3494; --cul-bg:#f4ecfa; --cul-bd:#d5bce8;
-  --intl:#59626f; --intl-bg:#eef0f3; --intl-bd:#cbd1da;
+  /* 한지(韓紙) 계열 — 차가운 순백 대신 미색 종이 톤 */
+  --bg:#faf7f0; --fg:#1b1d21; --muted:#6b7280; --line:#ddd6c8; --soft:#f2ede1;
+  --chrome:#f5f0e4;
+  --gov:#b8362d; --gov-bg:#fbe9e6; --gov-bd:#ecb5b0;
+  --dom:#1c56bd; --dom-bg:#e8eefa; --dom-bd:#b0c8f0;
+  --for:#0f6f4c; --for-bg:#e4f2ec; --for-bd:#a5dac4;
+  --cul:#6f3494; --cul-bg:#f1e9f7; --cul-bd:#d2b9e5;
+  --intl:#59626f; --intl-bg:#ecece8; --intl-bd:#cbccc6;
   --accent:#b8362d;
+  /* 표지 배경 층 — 한지 바탕 · 먹 안개 · 낙관 인주(印朱) */
+  --paper-1:#fdfbf6; --paper-2:#f0e8d8; --paper-3:#e6dcc6;
+  --ink:#2c3440; --seal:#b8362d; --seal-ink:#ffffff;
+  --grain:0.055; --lattice:0.05; --mist-1:0.07; --mist-2:0.10; --mist-3:0.14;
+  --ok:#0f6f4c; --ok-bg:#e4f2ec; --ok-bd:#8ccfb4;
+  --no:#b8362d; --no-bg:#fbe9e6; --no-bd:#e8a49d;
   --fs:1;
 }
+/* 다크 — 밤하늘 먹빛. 한지 대신 '먹을 머금은 종이' 쪽으로 살짝 따뜻하게. */
 @media (prefers-color-scheme:dark){
   :root{
-    --bg:#15171b; --fg:#e8eaed; --muted:#9aa1ac; --line:#333842; --soft:#1d2027;
-    --chrome:#1b1e24;
+    --bg:#15171b; --fg:#e8eaed; --muted:#9aa1ac; --line:#343842; --soft:#1e2128;
+    --chrome:#1c1f25;
     --gov:#ff9187; --gov-bg:#3a1f1d; --gov-bd:#6d3833;
     --dom:#8cb6ff; --dom-bg:#1a2438; --dom-bd:#33507f;
     --for:#69d6ab; --for-bg:#132e25; --for-bd:#2c5f4b;
     --cul:#cd9fea; --cul-bg:#281c34; --cul-bd:#513d66;
     --intl:#a7afbb; --intl-bg:#212429; --intl-bd:#3a3f48;
     --accent:#ff9187;
+    --paper-1:#1a1d24; --paper-2:#131519; --paper-3:#0e1014;
+    --ink:#c9d2e0; --seal:#d4483c; --seal-ink:#ffe9e6;
+    --grain:0.035; --lattice:0.07; --mist-1:0.10; --mist-2:0.15; --mist-3:0.22;
+    --ok:#69d6ab; --ok-bg:#132e25; --ok-bd:#2c5f4b;
+    --no:#ff9187; --no-bg:#3a1f1d; --no-bd:#6d3833;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#15171b; --fg:#e8eaed; --muted:#9aa1ac; --line:#333842; --soft:#1d2027;
-  --chrome:#1b1e24;
+  --bg:#15171b; --fg:#e8eaed; --muted:#9aa1ac; --line:#343842; --soft:#1e2128;
+  --chrome:#1c1f25;
   --gov:#ff9187; --gov-bg:#3a1f1d; --gov-bd:#6d3833;
   --dom:#8cb6ff; --dom-bg:#1a2438; --dom-bd:#33507f;
   --for:#69d6ab; --for-bg:#132e25; --for-bd:#2c5f4b;
   --cul:#cd9fea; --cul-bg:#281c34; --cul-bd:#513d66;
   --intl:#a7afbb; --intl-bg:#212429; --intl-bd:#3a3f48;
   --accent:#ff9187;
+  --paper-1:#1a1d24; --paper-2:#131519; --paper-3:#0e1014;
+  --ink:#c9d2e0; --seal:#d4483c; --seal-ink:#ffe9e6;
+  --grain:0.035; --lattice:0.07; --mist-1:0.10; --mist-2:0.15; --mist-3:0.22;
+  --ok:#69d6ab; --ok-bg:#132e25; --ok-bd:#2c5f4b;
+  --no:#ff9187; --no-bg:#3a1f1d; --no-bd:#6d3833;
 }
 :root[data-theme="light"]{
-  --bg:#ffffff; --fg:#1b1d21; --muted:#6b7280; --line:#d8dce3; --soft:#f5f6f8;
-  --chrome:#f7f8fa;
-  --gov:#b8362d; --gov-bg:#fdeceb; --gov-bd:#f0b7b2;
-  --dom:#1c56bd; --dom-bg:#eaf1fd; --dom-bd:#b3cbf3;
-  --for:#0f6f4c; --for-bg:#e7f5ef; --for-bd:#a9ddc7;
-  --cul:#6f3494; --cul-bg:#f4ecfa; --cul-bd:#d5bce8;
-  --intl:#59626f; --intl-bg:#eef0f3; --intl-bd:#cbd1da;
+  --bg:#faf7f0; --fg:#1b1d21; --muted:#6b7280; --line:#ddd6c8; --soft:#f2ede1;
+  --chrome:#f5f0e4;
+  --gov:#b8362d; --gov-bg:#fbe9e6; --gov-bd:#ecb5b0;
+  --dom:#1c56bd; --dom-bg:#e8eefa; --dom-bd:#b0c8f0;
+  --for:#0f6f4c; --for-bg:#e4f2ec; --for-bd:#a5dac4;
+  --cul:#6f3494; --cul-bg:#f1e9f7; --cul-bd:#d2b9e5;
+  --intl:#59626f; --intl-bg:#ecece8; --intl-bd:#cbccc6;
   --accent:#b8362d;
+  --paper-1:#fdfbf6; --paper-2:#f0e8d8; --paper-3:#e6dcc6;
+  --ink:#2c3440; --seal:#b8362d; --seal-ink:#ffffff;
+  --grain:0.055; --lattice:0.05; --mist-1:0.07; --mist-2:0.10; --mist-3:0.14;
+  --ok:#0f6f4c; --ok-bg:#e4f2ec; --ok-bd:#8ccfb4;
+  --no:#b8362d; --no-bg:#fbe9e6; --no-bd:#e8a49d;
 }
 
 /* ══════════════ 셸 ══════════════ */
@@ -105,6 +143,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;
 .btn .ico{font-size:1rem;line-height:1}
 .grp{display:flex;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:.6rem;overflow:hidden}
 .grp .btn{border:0;border-radius:0;min-width:2.4rem;padding:0 .5rem}
+/* 상단 바에 버튼이 5개라 아이패드 미니 세로(744px)에서 넘친다.
+   좁아지면 글자 라벨부터 접고, 더 좁아지면 현재 위치 표시를 숨긴다.
+   터치 표적(2.6rem)은 어느 단계에서도 줄이지 않는다. */
+@media (max-width:52rem){
+  .bar .lbl{display:none}
+  .btn{padding:0 .45rem}
+}
+@media (max-width:34rem){
+  .bar .where{display:none}
+  .bar{gap:.35rem}
+}
 
 /* ── 덱 ── */
 .deck{
@@ -124,7 +173,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;
 .panel.more::after{
   content:""; position:absolute; left:0; right:0; bottom:0; height:2rem;
   background:linear-gradient(to top, var(--bg), transparent); pointer-events:none;
+  z-index:2;
 }
+/* 표지는 배경에 질감이 있어 단색 페이드를 덮으면 경계선이 드러난다.
+   표지에서는 이 그림자를 쓰지 않는다 (표지 내용은 스크롤되지 않으므로 무해). */
+.panel[data-cover].more::after{display:none}
 .phead{flex:0 0 auto;display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap;
   border-bottom:2.5px solid var(--fg);padding-bottom:.28rem;margin-bottom:.15rem}
 .phead .rn{font-size:1.2rem;font-weight:800;color:var(--accent);line-height:1}
@@ -239,8 +292,117 @@ table b{font-weight:700}
 .quiz u{border-bottom:1.5px solid var(--muted);display:inline-block;
   min-width:5rem;text-decoration:none}
 
+/* ── 연도 빈칸 입력 ──
+   기존 <u> 밑줄의 생김새를 그대로 물려받아, 종이 학습지의 빈칸이
+   그대로 입력칸이 된 것처럼 보이게 한다. */
+.quiz div{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem}
+.blank{
+  font:inherit; color:var(--fg); background:transparent;
+  border:0; border-bottom:1.5px solid var(--muted); border-radius:.25rem .25rem 0 0;
+  min-width:5.5rem; width:5.5rem; max-width:100%; padding:.15rem .3rem;
+  text-align:center; -webkit-appearance:none; appearance:none;
+  transition:background .15s ease, border-color .15s ease;
+}
+.blank::placeholder{color:transparent}
+.blank:focus{outline:0;background:var(--soft);border-bottom-width:2.5px;
+  border-bottom-color:var(--accent)}
+.blank:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.quiz div.ok  .blank{border-bottom-color:var(--ok);background:var(--ok-bg);color:var(--ok);font-weight:700}
+.quiz div.no  .blank{border-bottom-color:var(--no);background:var(--no-bg);color:var(--no);font-weight:700}
+.quiz div.ok{border-color:var(--ok-bd)}
+.quiz div.no{border-color:var(--no-bd)}
+.mark{font-size:.95rem;font-weight:800;line-height:1;flex:0 0 auto}
+.quiz div.ok .mark{color:var(--ok)}
+.quiz div.no .mark{color:var(--no)}
+/* 오답일 때만 정답을 옆에 보여 준다 */
+.sol{display:none;font-size:.8rem;font-weight:700;color:var(--ok);
+  background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:.35rem;
+  padding:.05rem .4rem;flex:0 0 auto}
+.quiz div.no .sol,
+.quiz.reveal div .sol{display:inline-block}
+
+/* ── 채점 바 ── */
+.quizbar{
+  display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;
+  margin-top:.7rem;padding-top:.65rem;border-top:1px solid var(--line);
+}
+.quizbar .score{font-size:.86rem;font-weight:700;font-variant-numeric:tabular-nums;
+  margin-left:auto;color:var(--muted)}
+.quizbar .score b{color:var(--accent);font-size:1.05rem}
+.qbtn{
+  min-height:2.6rem;padding:.4rem .85rem;border:1px solid var(--line);
+  border-radius:.6rem;background:var(--bg);font-size:.84rem;font-weight:700;
+  display:inline-flex;align-items:center;gap:.35rem;
+}
+.qbtn:active{background:var(--soft)}
+.qbtn.main{border-color:var(--accent);color:var(--accent)}
+
+/* ══════════════ 표지 배경 ══════════════
+   "한지 위의 수묵(水墨)" — 뒤에서 앞으로 5개 층.
+   0 한지 바탕  1 종이 섬유 그레인  2 전통 창살(窓살) 격자
+   3 수묵 산수 능선  4 낙관(落款) 도장 = 저작권
+   외부 이미지·폰트 없이 CSS 그라디언트와 인라인 SVG만 사용한다
+   (오프라인 아이패드 배부를 전제로 한 자기완결 파일이므로). */
+.panel[data-cover]{
+  background:
+    radial-gradient(120% 80% at 82% 6%,  var(--paper-1) 0%, transparent 58%),
+    radial-gradient(100% 70% at 10% 96%, var(--paper-3) 0%, transparent 62%),
+    linear-gradient(168deg, var(--paper-1) 0%, var(--paper-2) 100%);
+}
+/* 2층 — 전통 창살(窓살). 아자살(亞字) 계열을 단순화했다.
+   눈금을 6rem으로 크게 잡아 벽지가 아니라 '창 너머'로 읽히게 한다. */
+.panel[data-cover]::before{
+  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    /* 세로살 */
+    repeating-linear-gradient(90deg,
+      rgba(120,96,58,var(--lattice)) 0 1px, transparent 1px 6rem),
+    /* 가로살 */
+    repeating-linear-gradient(0deg,
+      rgba(120,96,58,var(--lattice)) 0 1px, transparent 1px 6rem),
+    /* 아자(亞) 안쪽 보조살 */
+    repeating-linear-gradient(90deg,
+      transparent 0 2.6rem, rgba(120,96,58,calc(var(--lattice) * .55)) 2.6rem calc(2.6rem + 1px), transparent calc(2.6rem + 1px) 6rem),
+    repeating-linear-gradient(0deg,
+      transparent 0 2.6rem, rgba(120,96,58,calc(var(--lattice) * .55)) 2.6rem calc(2.6rem + 1px), transparent calc(2.6rem + 1px) 6rem);
+}
+/* 1층 — 종이 섬유 그레인. 레이어별 농도가 필요해 전용 요소로 분리. */
+.panel[data-cover] .grain{
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+  opacity:var(--grain); mix-blend-mode:multiply;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E") 0 0/180px 180px;
+}
+@media (prefers-color-scheme:dark){ .panel[data-cover] .grain{mix-blend-mode:screen} }
+:root[data-theme="dark"] .panel[data-cover] .grain{mix-blend-mode:screen}
+
+/* 3층 — 수묵 산수 능선. 원경·중경·근경 세 겹으로 깊이를 만든다.
+   층마다 농도가 달라야 하는데 background의 다중 레이어는 레이어별
+   opacity를 지원하지 않으므로, 능선 실루엣은 mask로 쓰고 색은 요소가 낸다. */
+.cover-mist{position:absolute;left:0;right:0;bottom:0;z-index:0;pointer-events:none;
+  height:min(46%, 17rem); overflow:hidden}
+.cover-mist span{position:absolute;left:-2%;right:-2%;bottom:0;display:block;
+  background:var(--ink);
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+  -webkit-mask-position:bottom; mask-position:bottom;
+  -webkit-mask-size:100% 100%; mask-size:100% 100%;
+}
+.cover-mist .m1{height:100%; opacity:var(--mist-1);
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 220' preserveAspectRatio='none'%3E%3Cpath d='M0 170 L90 118 L150 142 L235 74 L300 120 L370 92 L455 148 L540 106 L615 152 L700 110 L780 156 L865 118 L940 150 L1030 96 L1110 140 L1200 108 L1200 220 L0 220 Z' fill='%23fff'/%3E%3C/svg%3E");
+          mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 220' preserveAspectRatio='none'%3E%3Cpath d='M0 170 L90 118 L150 142 L235 74 L300 120 L370 92 L455 148 L540 106 L615 152 L700 110 L780 156 L865 118 L940 150 L1030 96 L1110 140 L1200 108 L1200 220 L0 220 Z' fill='%23fff'/%3E%3C/svg%3E")}
+.cover-mist .m2{height:66%; opacity:var(--mist-2);
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 220' preserveAspectRatio='none'%3E%3Cpath d='M0 196 L120 152 L210 176 L310 128 L400 168 L500 140 L590 182 L690 146 L790 184 L880 152 L980 186 L1090 150 L1200 178 L1200 220 L0 220 Z' fill='%23fff'/%3E%3C/svg%3E");
+          mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 220' preserveAspectRatio='none'%3E%3Cpath d='M0 196 L120 152 L210 176 L310 128 L400 168 L500 140 L590 182 L690 146 L790 184 L880 152 L980 186 L1090 150 L1200 178 L1200 220 L0 220 Z' fill='%23fff'/%3E%3C/svg%3E")}
+.cover-mist .m3{height:34%; opacity:var(--mist-3);
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 220' preserveAspectRatio='none'%3E%3Cpath d='M0 208 L150 188 L280 202 L420 180 L560 200 L700 182 L840 204 L980 186 L1120 202 L1200 192 L1200 220 L0 220 Z' fill='%23fff'/%3E%3C/svg%3E");
+          mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 220' preserveAspectRatio='none'%3E%3Cpath d='M0 208 L150 188 L280 202 L420 180 L560 200 L700 182 L840 204 L980 186 L1120 202 L1200 192 L1200 220 L0 220 Z' fill='%23fff'/%3E%3C/svg%3E")}
+/* 안개가 아주 느리게 숨쉰다. prefers-reduced-motion에서는 전역 규칙이 끈다. */
+.cover-mist .m1{animation:drift 72s ease-in-out infinite alternate}
+.cover-mist .m2{animation:drift 96s ease-in-out infinite alternate-reverse}
+@keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(1.5%,0,0)}}
+
 /* ══════════════ 표지 ══════════════ */
-.cover{display:flex;flex-direction:column;justify-content:center;height:100%;gap:.8rem}
+.cover{display:flex;flex-direction:column;justify-content:center;height:100%;gap:.8rem;
+  position:relative;z-index:1}
 .cover h1{margin:0;font-size:1.85rem;font-weight:800;letter-spacing:-.8px;line-height:1.3}
 .cover .scope{font-size:.92rem;color:var(--muted);line-height:1.7}
 .cover ol{margin:0;padding-left:1.25rem;font-size:.95rem;color:var(--muted);line-height:1.8}
@@ -255,6 +417,44 @@ table b{font-weight:700}
 .lg.cul{color:var(--cul);border-color:var(--cul-bd);background:var(--cul-bg)} .lg.cul i{background:var(--cul)}
 .lg.intl{color:var(--intl);border-color:var(--intl-bd);background:var(--intl-bg)} .lg.intl i{background:var(--intl)}
 .cover .swipe{font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:.4rem}
+
+/* ── 낙관(落款) · 저작권 ──
+   동아시아 서화에서 작자를 밝히는 방식이 붉은 사각 인장이다.
+   이 문서의 accent(#b8362d)가 마침 단청 적색이라, 저작권 표기를
+   장식이 아니라 디자인의 일부로 앉힌다. */
+/* margin-top:auto는 .cover의 justify-content:center와 충돌해 본문을
+   위로 밀어붙이므로, 고정 여백으로 두어 전체가 광학적으로 가운데 오게 한다. */
+.colophon{
+  margin-top:.6rem; padding-top:.9rem; display:flex; align-items:flex-end;
+  gap:.85rem; border-top:1px solid var(--line);
+}
+.colophon .who{flex:1 1 auto;min-width:0;font-size:.76rem;line-height:1.6;color:var(--muted)}
+.colophon .who b{color:var(--fg);font-weight:700}
+.colophon .who .rights{display:block;font-size:.7rem;opacity:.85;margin-top:.1rem}
+.seal{
+  flex:0 0 auto; width:3.3rem; height:3.3rem; border:2.5px solid var(--seal);
+  border-radius:.25rem; background:var(--seal); color:var(--seal-ink);
+  display:grid; grid-template-columns:1fr 1fr; align-items:center;
+  justify-items:center; padding:.2rem; transform:rotate(-3deg);
+  box-shadow:0 1px 3px rgba(184,54,45,.28);
+  font-size:.82rem; font-weight:800; line-height:1; letter-spacing:0;
+  user-select:none;
+}
+.seal i{font-style:normal;display:block}
+@media print{ .seal{transform:none} }
+
+/* ── 표지 인쇄·PDF 카드 ── */
+.cover .actions{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.cta{
+  display:inline-flex; align-items:center; gap:.5rem; min-height:2.9rem;
+  padding:.5rem .95rem; border-radius:.7rem; font-size:.88rem; font-weight:700;
+  border:1px solid var(--line); background:var(--bg); color:var(--fg);
+  box-shadow:0 1px 2px rgba(0,0,0,.04);
+}
+.cta .ico{font-size:1.05rem;line-height:1}
+.cta:active{background:var(--soft);transform:translateY(1px)}
+.cta.primary{border-color:var(--accent);color:var(--accent)}
+.cta.primary .ico{color:var(--accent)}
 
 /* ══════════════ 하단 내비 ══════════════ */
 .nav{
@@ -290,24 +490,99 @@ table b{font-weight:700}
 .toc li button[aria-current="true"]{border-color:var(--accent);
   box-shadow:inset 0 0 0 1px var(--accent);font-weight:700}
 
+/* ══════════════ 인쇄 · PDF 시트 ══════════════ */
+.sheet{position:fixed;inset:0;z-index:60;display:none}
+.sheet.on{display:block}
+.sheet .scrim{position:absolute;inset:0;background:rgba(20,18,14,.45)}
+.sheet .box{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:min(34rem, calc(100vw - 2rem)); max-height:calc(100dvh - 2rem);
+  overflow-y:auto; background:var(--bg); color:var(--fg);
+  border:1px solid var(--line); border-radius:1rem;
+  box-shadow:0 1.2rem 3rem rgba(0,0,0,.28);
+}
+.sheet .sh{display:flex;align-items:center;gap:.6rem;padding:.8rem 1rem;
+  border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);
+  border-radius:1rem 1rem 0 0}
+.sheet .sh h3{margin:0;font-size:1rem;font-weight:700;flex:1 1 auto}
+.sheet .sb{padding:.8rem 1rem 1rem;display:grid;gap:.5rem}
+.opt{
+  display:flex;align-items:flex-start;gap:.75rem;width:100%;text-align:left;
+  border:1px solid var(--line);border-radius:.75rem;padding:.75rem .85rem;
+  background:var(--bg);min-height:3.4rem;
+}
+.opt:active{background:var(--soft)}
+.opt .ico{font-size:1.35rem;line-height:1.2;flex:0 0 auto;color:var(--accent)}
+.opt .tx{flex:1 1 auto;min-width:0}
+.opt .tt{display:block;font-size:.95rem;font-weight:700}
+.opt .dd{display:block;font-size:.78rem;color:var(--muted);line-height:1.5;margin-top:.1rem}
+.sheet .optline{display:flex;align-items:flex-start;gap:.6rem;font-size:.84rem;
+  line-height:1.55;padding:.6rem .2rem .1rem;cursor:pointer}
+.sheet .optline input{appearance:none;-webkit-appearance:none;flex:0 0 auto;
+  width:1.35rem;height:1.35rem;margin:.05rem 0 0;border:2px solid var(--line);
+  border-radius:.35rem;background:var(--bg);position:relative}
+.sheet .optline input:checked{background:var(--accent);border-color:var(--accent)}
+.sheet .optline input:checked::after{content:"✓";position:absolute;inset:0;color:#fff;
+  font-size:.9rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.tip{
+  display:flex;gap:.55rem;font-size:.8rem;line-height:1.6;color:var(--muted);
+  background:var(--soft);border:1px dashed var(--line);border-radius:.6rem;
+  padding:.6rem .7rem;margin-top:.3rem;
+}
+.tip b{color:var(--fg)}
+
 /* ══════════════ 접근성 · 모션 ══════════════ */
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
 }
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:.3rem}
 
-/* ══════════════ 인쇄 (간이) ══════════════
-   본격 A4 인쇄는 짝 파일 「한국사2_2학기_중간고사_연표정리.html」을 쓰세요. */
+/* ══════════════ 인쇄 · PDF ══════════════
+   A4 가로 · 한 쪽에 한 패널. 「인쇄 · PDF 저장」 버튼이 여기를 쓴다.
+   더 촘촘한 배부용 조판은 짝 파일 「한국사2_2학기_중간고사_연표정리.html」. */
 @media print{
   @page{size:A4 landscape;margin:10mm}
   html{font-size:9pt}
   body{height:auto;overflow:visible;display:block;background:#fff;color:#000}
-  .bar,.nav,.toc,.rot{display:none !important}
+  .bar,.nav,.toc,.sheet,.rot,.cta,.quizbar,.actions{display:none !important}
   .deck{display:block;overflow:visible;height:auto}
-  .panel{width:auto;break-after:page;page-break-after:always;padding:0;display:block}
+  .panel{width:auto;break-after:page;page-break-after:always;padding:0;display:block;
+    min-height:0;height:auto}
+  .panel:last-child{break-after:auto;page-break-after:auto}
   .pbody{overflow:visible;display:block;height:auto}
+  .pbody.center{display:block}
   .band,.card,table,.quiz div{break-inside:avoid;page-break-inside:avoid}
+  /* 연표 밴드는 화면에서 가로 스크롤을 쓰지만 종이에는 스크롤이 없다 */
+  .tl{overflow:visible !important}
+  .band{min-width:0 !important;width:100% !important}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  /* 표지 장식은 종이에 찍지 않는다 — 잉크를 아끼고 글이 또렷해진다.
+     단, 저작권(낙관 + 문구)은 반드시 남긴다. */
+  .panel[data-cover]{background:none !important}
+  .panel[data-cover]::before{display:none !important}
+  .grain,.cover-mist{display:none !important}
+  .cover{height:auto;display:block}
+  .colophon{margin-top:1.2rem;break-inside:avoid;page-break-inside:avoid}
+
+  /* 빈칸은 학생이 손으로 쓸 수 있게 밑줄만 남긴다.
+     「내 답안 포함」을 켜면 body.print-answers가 붙어 글씨가 같이 찍힌다. */
+  .blank{border-bottom:1px solid #000;background:none !important;color:transparent !important;
+    width:7rem;min-width:7rem}
+  body.print-answers .blank{color:#000 !important;font-weight:700}
+  .mark,.sol{display:none !important}
+
+  /* 「지금 보는 쪽만」 — 대상 패널 하나만 남긴다 */
+  body.print-one .panel{display:none !important}
+  body.print-one .panel.print-on{display:block !important;
+    break-after:auto;page-break-after:auto}
+
+  /* 모든 인쇄물 맨 끝에 저작권 한 줄 */
+  .deck::after{
+    content:"© 2026 고운고등학교 교사 이수훈 · 한국사 2 · 2학기 중간고사 연표 정리";
+    display:block;margin-top:6mm;padding-top:2mm;border-top:.4pt solid #999;
+    font-size:7.5pt;color:#555;text-align:center;
+  }
 }
 </style>
 </head>
@@ -317,19 +592,22 @@ table b{font-weight:700}
 <header class="bar">
   <span class="brand">한국사 2 · 연표 정리</span>
   <span class="where" id="where">표지</span>
-  <button class="btn" id="tocBtn" aria-haspopup="dialog" aria-expanded="false"><span class="ico">☰</span> 목차</button>
+  <button class="btn" id="tocBtn" aria-haspopup="dialog" aria-expanded="false"><span class="ico">☰</span> <span class="lbl">목차</span></button>
+  <button class="btn" data-print-open aria-haspopup="dialog" aria-expanded="false" aria-label="인쇄 · PDF 저장"><span class="ico">⎙</span> <span class="lbl">인쇄</span></button>
   <div class="grp" role="group" aria-label="글씨 크기">
     <button class="btn" id="fsDown" aria-label="글씨 작게">A−</button>
     <button class="btn" id="fsUp" aria-label="글씨 크게">A+</button>
   </div>
-  <button class="btn" id="themeBtn" aria-label="화면 모드 바꾸기"><span class="ico" id="themeIco">◐</span> <span id="themeTxt">시스템</span></button>
+  <button class="btn" id="themeBtn" aria-label="화면 모드 바꾸기"><span class="ico" id="themeIco">◐</span> <span class="lbl" id="themeTxt">시스템</span></button>
 </header>
 
 <!-- ══════════════ 덱 ══════════════ -->
 <main class="deck" id="deck" tabindex="0" aria-label="학습 자료 페이지">
 
 <!-- ───────── 1. 표지 ───────── -->
-<section class="panel" data-title="표지 · 사용법" data-group="시작">
+<section class="panel" data-cover data-title="표지 · 사용법" data-group="시작">
+  <span class="grain" aria-hidden="true"></span>
+  <div class="cover-mist" aria-hidden="true"><span class="m1"></span><span class="m2"></span><span class="m3"></span></div>
   <div class="pbody center">
     <div class="cover">
       <h1>한국사 2 · 2학기 중간고사 연표 정리</h1>
@@ -351,6 +629,25 @@ table b{font-weight:700}
         <span class="lg cul"><i></i>사회 · 경제 · 문화</span>
       </div>
       <div class="swipe"><span style="font-size:1.1rem">←</span> 화면을 옆으로 넘겨 보세요 · 전체 20쪽</div>
+
+      <div class="actions">
+        <button type="button" class="cta primary" data-print-open>
+          <span class="ico" aria-hidden="true">⎙</span> 인쇄 · PDF 저장
+        </button>
+        <button type="button" class="cta" data-goto="18">
+          <span class="ico" aria-hidden="true">✎</span> 연도 빈칸 풀어 보기
+        </button>
+      </div>
+
+      <footer class="colophon">
+        <div class="who">
+          <b>고운고등학교 교사 이수훈</b> 제작 · 편집
+          <span class="rights">© 2026 이수훈. 이 자료의 구성 · 편집 · 디자인에 대한 저작권은 제작자에게 있습니다.</span>
+        </div>
+        <div class="seal" role="img" aria-label="저작권: 고운고등학교 교사 이수훈">
+          <i>李</i><i>秀</i><i>勳</i><i>印</i>
+        </div>
+      </footer>
     </div>
   </div>
 </section>
@@ -1219,21 +1516,27 @@ table b{font-weight:700}
 <!-- ───────── 19. 연도 빈칸 1~12 ───────── -->
 <section class="panel" data-title="연도 빈칸 1~12" data-group="마무리">
   <div class="phead"><h2>연도 빈칸 채우기 &nbsp;1~12</h2>
-    <span class="topics">공책에 답을 적어 보세요</span></div>
+    <span class="topics" id="q1Count">0 / 12</span></div>
   <div class="pbody">
-    <div class="quiz">
-      <div><b>1910</b> <u></u> 설치 · 회사령</div>
-      <div><b>1912</b> 조선 <u></u>령 · 토지 조사령</div>
-      <div><b>1919</b> <u></u> 운동 · 임시 정부 수립</div>
-      <div><b>1920</b> <u></u> 전투 · 청산리 대첩</div>
-      <div><b>1921</b> <u></u> 참변</div>
-      <div><b>1923</b> <u></u> 회의 (창조파 · 개조파)</div>
-      <div><b>1925</b> <u></u>법 · 미쓰야 협정</div>
-      <div><b>1926</b> <u></u> 만세 운동</div>
-      <div><b>1927</b> <u></u> 창립 · 근우회</div>
-      <div><b>1929</b> <u></u> 학생 항일 운동</div>
-      <div><b>1931</b> <u></u> 사변 · 한인 애국단</div>
-      <div><b>1932</b> 이봉창 · <u></u> 의거</div>
+    <div class="quiz" data-quiz="1">
+      <div><b>1910</b> <input class="blank" data-a="조선 총독부" data-alt="총독부"> 설치 · 회사령</div>
+      <div><b>1912</b> 조선 <input class="blank" data-a="태형" data-alt="조선태형|태형령">령 · 토지 조사령</div>
+      <div><b>1919</b> <input class="blank" data-a="3·1" data-alt="삼일|삼·일|3·1운동"> 운동 · 임시 정부 수립</div>
+      <div><b>1920</b> <input class="blank" data-a="봉오동" data-alt="봉오동전투"> 전투 · 청산리 대첩</div>
+      <div><b>1921</b> <input class="blank" data-a="자유시" data-alt="자유시참변"> 참변</div>
+      <div><b>1923</b> <input class="blank" data-a="국민 대표" data-alt="국민대표회의"> 회의 (창조파 · 개조파)</div>
+      <div><b>1925</b> <input class="blank" data-a="치안 유지" data-alt="치안유지법">법 · 미쓰야 협정</div>
+      <div><b>1926</b> <input class="blank" data-a="6·10" data-alt="육십|6·10만세"> 만세 운동</div>
+      <div><b>1927</b> <input class="blank" data-a="신간회" data-alt="신간"> 창립 · 근우회</div>
+      <div><b>1929</b> <input class="blank" data-a="광주" data-alt="광주학생|광주학생항일운동"> 학생 항일 운동</div>
+      <div><b>1931</b> <input class="blank" data-a="만주" data-alt="만주사변"> 사변 · 한인 애국단</div>
+      <div><b>1932</b> 이봉창 · <input class="blank" data-a="윤봉길" data-alt="윤봉길의거"> 의거</div>
+    </div>
+    <div class="quizbar">
+      <button type="button" class="qbtn main" data-grade="1">채점하기</button>
+      <button type="button" class="qbtn" data-reveal="1" aria-pressed="false">정답 보기</button>
+      <button type="button" class="qbtn" data-reset="1">다시 풀기</button>
+      <span class="score" id="q1Score">빈칸을 눌러 답을 적어 보세요</span>
     </div>
   </div>
 </section>
@@ -1241,19 +1544,25 @@ table b{font-weight:700}
 <!-- ───────── 20. 연도 빈칸 13~22 ───────── -->
 <section class="panel" data-title="연도 빈칸 13~22" data-group="마무리">
   <div class="phead"><h2>연도 빈칸 채우기 &nbsp;13~22</h2>
-    <span class="topics">공책에 답을 적어 보세요</span></div>
+    <span class="topics" id="q2Count">0 / 10</span></div>
   <div class="pbody">
-    <div class="quiz">
-      <div><b>1937</b> <u></u> 전쟁 · 황국 신민 서사</div>
-      <div><b>1938</b> 국가 <u></u>법 · 조선 의용대</div>
-      <div><b>1940</b> 창씨개명 · <u></u> 창설</div>
-      <div><b>1941</b> 대한민국 <u></u> 강령</div>
-      <div><b>1942</b> 조선어 <u></u> 사건</div>
-      <div><b>1943</b> <u></u> 회담 (독립 최초 보장)</div>
-      <div><b>1945</b> 8·15 광복 · <u></u> 3국 외상 회의</div>
-      <div><b>1946</b> 이승만 <u></u> 발언 · 좌우 합작</div>
-      <div><b>1948</b> <u></u> 총선거 · 정부 수립</div>
-      <div><b>1949</b> <u></u> 개혁법 · 반민 특위 해체</div>
+    <div class="quiz" data-quiz="2">
+      <div><b>1937</b> <input class="blank" data-a="중일" data-alt="중일전쟁|중·일"> 전쟁 · 황국 신민 서사</div>
+      <div><b>1938</b> 국가 <input class="blank" data-a="총동원" data-alt="국가총동원|총동원법">법 · 조선 의용대</div>
+      <div><b>1940</b> 창씨개명 · <input class="blank" data-a="한국 광복군" data-alt="광복군"> 창설</div>
+      <div><b>1941</b> 대한민국 <input class="blank" data-a="건국" data-alt="건국강령"> 강령</div>
+      <div><b>1942</b> 조선어 <input class="blank" data-a="학회" data-alt="조선어학회"> 사건</div>
+      <div><b>1943</b> <input class="blank" data-a="카이로" data-alt="카이로회담"> 회담 (독립 최초 보장)</div>
+      <div><b>1945</b> 8·15 광복 · <input class="blank" data-a="모스크바" data-alt="모스크바3국외상회의"> 3국 외상 회의</div>
+      <div><b>1946</b> 이승만 <input class="blank" data-a="정읍" data-alt="정읍발언"> 발언 · 좌우 합작</div>
+      <div><b>1948</b> <input class="blank" data-a="5·10" data-alt="오십|5·10총선거"> 총선거 · 정부 수립</div>
+      <div><b>1949</b> <input class="blank" data-a="농지" data-alt="농지개혁"> 개혁법 · 반민 특위 해체</div>
+    </div>
+    <div class="quizbar">
+      <button type="button" class="qbtn main" data-grade="2">채점하기</button>
+      <button type="button" class="qbtn" data-reveal="2" aria-pressed="false">정답 보기</button>
+      <button type="button" class="qbtn" data-reset="2">다시 풀기</button>
+      <span class="score" id="q2Score">빈칸을 눌러 답을 적어 보세요</span>
     </div>
     <p style="font-size:.8rem;color:var(--muted);margin:1rem 0 0;border-top:1px solid var(--line);padding-top:.7rem">
       이 학습지는 교과서 『한국사 2』 8~73쪽(주제 01~14)의 본문 · 연표 · 도표만을 근거로 정리했습니다.
@@ -1280,6 +1589,55 @@ table b{font-weight:700}
     <button class="btn" id="tocClose" aria-label="목차 닫기">✕ 닫기</button>
   </div>
   <div class="tb" id="tocBody"></div>
+</div>
+
+<!-- ══════════════ 인쇄 · PDF 시트 ══════════════ -->
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="scrim" data-print-close></div>
+  <div class="box">
+    <div class="sh">
+      <h3 id="sheetTitle">인쇄 · PDF 저장</h3>
+      <button class="btn" data-print-close aria-label="닫기">✕ 닫기</button>
+    </div>
+    <div class="sb">
+      <button type="button" class="opt" id="printOne">
+        <span class="ico" aria-hidden="true">⎙</span>
+        <span class="tx">
+          <span class="tt">지금 보는 쪽만</span>
+          <span class="dd" id="printOneWhere">현재 쪽 · 1쪽</span>
+        </span>
+      </button>
+
+      <button type="button" class="opt" id="printAll">
+        <span class="ico" aria-hidden="true">▤</span>
+        <span class="tx">
+          <span class="tt">전체 20쪽</span>
+          <span class="dd">A4 가로 · 한 쪽에 한 면씩</span>
+        </span>
+      </button>
+
+      <a class="opt" id="openA4" href="#" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">▦</span>
+        <span class="tx">
+          <span class="tt">A4 배부용 인쇄본 열기</span>
+          <span class="dd">더 촘촘한 조판 · 새 창에서 열립니다<br>
+            <small>같은 폴더에 「한국사2_2학기_중간고사_연표정리.html」이 있어야 합니다.</small></span>
+        </span>
+      </a>
+
+      <label class="optline">
+        <input type="checkbox" id="printAnswers">
+        <span>연도 빈칸에 <b>내가 쓴 답</b>도 함께 인쇄하기<br>
+          <span style="color:var(--muted)">꺼 두면 손으로 풀 수 있게 빈 밑줄로 나옵니다.</span></span>
+      </label>
+
+      <div class="tip">
+        <span aria-hidden="true">💡</span>
+        <span><b>PDF로 저장하려면</b> 인쇄 창에서 프린터 대신 <b>“PDF로 저장”</b>을 고르세요.
+          아이패드는 인쇄 미리보기를 두 손가락으로 벌린 뒤 <b>공유 → 파일에 저장</b>을 누르면 됩니다.</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -1334,7 +1692,13 @@ table b{font-weight:700}
   document.getElementById('next').addEventListener('click', function(){ go(idx+1); });
 
   document.addEventListener('keydown', function(e){
+    /* 빈칸에 글자를 칠 때 방향키가 쪽을 넘겨 버리면 안 된다 */
     if (e.target && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) return;
+    /* 인쇄 시트가 떠 있으면 뒤쪽 덱이 움직이지 않게 막는다 */
+    if (sheet.classList.contains('on')){
+      if (e.key === 'Escape'){ e.preventDefault(); closeSheet(); }
+      return;
+    }
     if (e.key === 'ArrowRight' || e.key === 'PageDown'){ go(idx+1); e.preventDefault(); }
     else if (e.key === 'ArrowLeft' || e.key === 'PageUp'){ go(idx-1); e.preventDefault(); }
     else if (e.key === 'Home'){ go(0); e.preventDefault(); }
@@ -1447,6 +1811,264 @@ table b{font-weight:700}
     });
   });
   countChecks();
+
+  /* ══════════════ 연도 빈칸 채우기 ══════════════
+     채점 기준은 교사용 정답지를 따른다.
+     · 띄어쓰기는 감점하지 않는다        ('조선총독부' = '조선 총독부')
+     · 가운뎃점 표기는 가리지 않는다      ('3·1' = '3.1' = '31')
+     · 정식 명칭 대신 줄인 말도 인정한다  ('광복군' = '한국 광복군')
+     허용 표기는 각 input의 data-alt에 | 로 구분해 적어 둔다. */
+  function norm(s){
+    return String(s == null ? '' : s)
+      .replace(/\s+/g, '')                            /* 띄어쓰기 무시 */
+      .replace(/[·ㆍ‧•∙・.,'"\-–—_()（）\[\]]/g, '')   /* 가운뎃점·구두점 무시 */
+      .toLowerCase();
+  }
+  function isOk(inp){
+    var mine = norm(inp.value);
+    if (!mine) return false;
+    var list = [inp.getAttribute('data-a')]
+      .concat((inp.getAttribute('data-alt') || '').split('|'));
+    for (var i = 0; i < list.length; i++){
+      var a = norm(list[i]);
+      if (a && a === mine) return true;
+    }
+    return false;
+  }
+
+  Array.prototype.slice.call(document.querySelectorAll('.quiz[data-quiz]'))
+  .forEach(function(q){
+    var id      = q.getAttribute('data-quiz');
+    var inputs  = Array.prototype.slice.call(q.querySelectorAll('.blank'));
+    var scoreEl = document.getElementById('q' + id + 'Score');
+    var countEl = document.getElementById('q' + id + 'Count');
+    var KEY     = 'quiz' + id;
+    var graded  = LS.get(KEY + '.g', '') === '1';
+
+    var gradeBtn  = document.querySelector('[data-grade="'  + id + '"]');
+    var revealBtn = document.querySelector('[data-reveal="' + id + '"]');
+    var resetBtn  = document.querySelector('[data-reset="'  + id + '"]');
+
+    /* 채점 표식(✓/✗)과 정답 칩을 각 문항 끝에 붙인다 */
+    inputs.forEach(function(inp, i){
+      var yr = inp.parentNode.querySelector('b');
+      inp.type = 'text';
+      inp.setAttribute('aria-label', (yr ? yr.textContent : (i+1)) + '년 빈칸');
+      inp.setAttribute('autocomplete', 'off');
+      inp.setAttribute('autocapitalize', 'off');
+      inp.setAttribute('autocorrect', 'off');
+      inp.setAttribute('spellcheck', 'false');
+      inp.setAttribute('enterkeyhint', i === inputs.length - 1 ? 'done' : 'next');
+      var mk = document.createElement('span');
+      mk.className = 'mark'; mk.setAttribute('aria-hidden', 'true');
+      var sol = document.createElement('span');
+      sol.className = 'sol'; sol.textContent = inp.getAttribute('data-a');
+      inp.parentNode.appendChild(mk);
+      inp.parentNode.appendChild(sol);
+    });
+
+    /* 지난번에 쓰던 답 복원 */
+    var saved;
+    try { saved = JSON.parse(LS.get(KEY, '[]')); } catch(e){ saved = []; }
+    if (!Array.isArray(saved)) saved = [];
+    inputs.forEach(function(inp, i){
+      if (typeof saved[i] === 'string') inp.value = saved[i];
+    });
+    function save(){
+      LS.set(KEY, JSON.stringify(inputs.map(function(x){ return x.value; })));
+    }
+
+    function refresh(){
+      var filled = 0, ok = 0;
+      inputs.forEach(function(inp){
+        if (inp.value.replace(/\s+/g,'')) filled++;
+        if (isOk(inp)) ok++;
+      });
+      if (graded){
+        countEl.textContent = ok + ' / ' + inputs.length;
+        scoreEl.innerHTML = '<b>' + ok + '</b> / ' + inputs.length + ' 맞음';
+      } else {
+        countEl.textContent = filled + ' / ' + inputs.length;
+        scoreEl.textContent = filled
+          ? (filled + '칸 입력함 · 다 쓰면 「채점하기」')
+          : '빈칸을 눌러 답을 적어 보세요';
+      }
+    }
+    function mark(){
+      graded = true; LS.set(KEY + '.g', '1');
+      inputs.forEach(function(inp){
+        var d = inp.parentNode, good = isOk(inp);
+        d.classList.toggle('ok', good);
+        d.classList.toggle('no', !good);
+        d.querySelector('.mark').textContent = good ? '✓' : '✗';
+      });
+      refresh();
+    }
+    function unmark(){
+      graded = false; LS.set(KEY + '.g', '');
+      inputs.forEach(function(inp){
+        var d = inp.parentNode;
+        d.classList.remove('ok', 'no');
+        d.querySelector('.mark').textContent = '';
+      });
+    }
+
+    inputs.forEach(function(inp, i){
+      inp.addEventListener('input', function(){
+        if (graded) unmark();   /* 고치기 시작하면 채점 표식을 지운다 */
+        save(); refresh();
+      });
+      inp.addEventListener('keydown', function(e){
+        if (e.key !== 'Enter') return;
+        e.preventDefault();
+        if (i < inputs.length - 1) inputs[i+1].focus();
+        else { inp.blur(); mark(); }
+      });
+      /* 아이패드에서 키보드가 올라오면 입력칸이 가려진다.
+         inline:'nearest'로 두어야 가로 스냅(덱)이 움직이지 않는다. */
+      inp.addEventListener('focus', function(){
+        setTimeout(function(){
+          try { inp.scrollIntoView({ block:'center', inline:'nearest' }); }
+          catch(err){ inp.scrollIntoView(); }
+        }, 260);
+      });
+    });
+
+    gradeBtn.addEventListener('click', function(){
+      if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+      mark();
+    });
+
+    revealBtn.addEventListener('click', function(){
+      var on = q.classList.toggle('reveal');
+      revealBtn.setAttribute('aria-pressed', String(on));
+      revealBtn.textContent = on ? '정답 숨기기' : '정답 보기';
+    });
+
+    /* 지운 답은 되살릴 수 없으므로 두 번 눌러야 지워진다.
+       confirm() 창은 태블릿에서 흐름을 끊어 버려 쓰지 않는다. */
+    var armTimer = null;
+    function disarm(){
+      if (armTimer){ clearTimeout(armTimer); armTimer = null; }
+      resetBtn.textContent = '다시 풀기';
+      resetBtn.classList.remove('main');
+    }
+    resetBtn.addEventListener('click', function(){
+      if (!armTimer){
+        resetBtn.textContent = '정말 지울까요?';
+        resetBtn.classList.add('main');
+        armTimer = setTimeout(disarm, 3000);
+        return;
+      }
+      disarm();
+      inputs.forEach(function(x){ x.value = ''; });
+      unmark();
+      q.classList.remove('reveal');
+      revealBtn.setAttribute('aria-pressed', 'false');
+      revealBtn.textContent = '정답 보기';
+      save(); refresh();
+      inputs[0].focus();
+    });
+
+    if (graded) mark(); else refresh();
+  });
+
+  /* ══════════════ 인쇄 · PDF ══════════════
+     브라우저 밖으로 나가는 PDF 변환 라이브러리는 쓰지 않는다. 이 파일은
+     오프라인 아이패드에 그대로 복사돼 열리기 때문에 CDN을 붙일 수 없고,
+     한글 폰트를 심지 않은 jsPDF류는 글자가 깨진다. 대신 브라우저 인쇄
+     대화상자의 "PDF로 저장"을 정식 경로로 쓰고, 그 방법을 시트에 적어 둔다. */
+  var sheet = document.getElementById('sheet');
+  var sheetOpener = null;
+
+  function openSheet(btn){
+    sheetOpener = btn || null;
+    document.getElementById('printOneWhere').textContent =
+      (panels[idx].getAttribute('data-title') || '현재 쪽') + ' · ' + (idx+1) + '쪽';
+    sheet.classList.add('on');
+    Array.prototype.slice.call(document.querySelectorAll('[data-print-open]'))
+      .forEach(function(b){ b.setAttribute('aria-expanded','true'); });
+    var first = sheet.querySelector('.opt');
+    if (first) first.focus();
+  }
+  function closeSheet(){
+    sheet.classList.remove('on');
+    Array.prototype.slice.call(document.querySelectorAll('[data-print-open]'))
+      .forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    if (sheetOpener && sheetOpener.focus) sheetOpener.focus();
+    sheetOpener = null;
+  }
+  Array.prototype.slice.call(document.querySelectorAll('[data-print-open]'))
+    .forEach(function(b){ b.addEventListener('click', function(){ openSheet(b); }); });
+  Array.prototype.slice.call(document.querySelectorAll('[data-print-close]'))
+    .forEach(function(b){ b.addEventListener('click', closeSheet); });
+
+  /* 시트 안에서 Tab이 밖으로 새지 않게 가둔다 */
+  sheet.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){ e.preventDefault(); closeSheet(); return; }
+    if (e.key !== 'Tab') return;
+    var f = Array.prototype.slice.call(
+      sheet.querySelectorAll('button, a[href], input')
+    ).filter(function(el){ return el.offsetParent !== null; });
+    if (!f.length) return;
+    var first = f[0], last = f[f.length-1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  });
+
+  /* 「내 답안 포함」 — 끄면 빈 밑줄로 인쇄된다 */
+  var ansBox = document.getElementById('printAnswers');
+  ansBox.checked = LS.get('printAns','') === '1';
+  function syncAns(){
+    document.body.classList.toggle('print-answers', ansBox.checked);
+    LS.set('printAns', ansBox.checked ? '1' : '');
+  }
+  ansBox.addEventListener('change', syncAns);
+  syncAns();
+
+  /* 인쇄가 끝나면 화면을 원래대로 되돌린다.
+     아이패드 사파리는 afterprint를 놓칠 때가 있어 matchMedia로도 받는다. */
+  function restore(){
+    document.body.classList.remove('print-one');
+    var on = deck.querySelector('.panel.print-on');
+    if (on) on.classList.remove('print-on');
+  }
+  window.addEventListener('afterprint', restore);
+  if (window.matchMedia){
+    var mqp = window.matchMedia('print');
+    var onMq = function(e){ if (!e.matches) restore(); };
+    if (mqp.addEventListener) mqp.addEventListener('change', onMq);
+    else if (mqp.addListener) mqp.addListener(onMq);
+  }
+
+  function fire(){
+    /* 시트가 닫히고 레이아웃이 가라앉은 뒤에 인쇄 대화상자를 연다 */
+    setTimeout(function(){
+      try { window.print(); } catch(e) { restore(); }
+    }, 120);
+  }
+  document.getElementById('printOne').addEventListener('click', function(){
+    restore();
+    panels[idx].classList.add('print-on');
+    document.body.classList.add('print-one');
+    closeSheet(); fire();
+  });
+  document.getElementById('printAll').addEventListener('click', function(){
+    restore(); closeSheet(); fire();
+  });
+
+  /* 짝 파일 링크 — 파일명에 한글과 공백이 있어 인코딩이 필요하다.
+     file:// 로 열었을 때도 같은 폴더 기준 상대 경로로 동작한다. */
+  document.getElementById('openA4').setAttribute(
+    'href', encodeURI('한국사2_2학기_중간고사_연표정리.html'));
+
+  /* 표지의 "연도 빈칸 풀어 보기" 같은 바로가기 */
+  Array.prototype.slice.call(document.querySelectorAll('[data-goto]'))
+  .forEach(function(b){
+    b.addEventListener('click', function(){
+      go(parseInt(b.getAttribute('data-goto'), 10) || 0);
+    });
+  });
 
   /* ── 초기화: 글씨 크기 적용 + 읽던 곳 복귀 ── */
   document.documentElement.style.setProperty('--fs', String(STEPS[fs]));
